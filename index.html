@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinWise - Expert Financial Consulting</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Feather Icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
+
+    <!-- AOS (Animate On Scroll) Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        /* Custom base styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        /* Define colors for light and dark mode using CSS variables */
+        :root {
+            --bg-primary: #ffffff;
+            --bg-secondary: #f4f7f5;
+            --text-primary: #0a2342;
+            --text-secondary: #4a5568;
+            --accent: #2ca58d;
+            --border-color: #e2e8f0;
+        }
+
+        .dark {
+            --bg-primary: #0a2342;
+            --bg-secondary: #1a202c;
+            --text-primary: #ffffff;
+            --text-secondary: #a0aec0;
+            --accent: #38b2ac;
+            --border-color: #4a5568;
+        }
+
+        /* Apply colors using variables */
+        body {
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        
+        .bg-primary { background-color: var(--bg-primary); }
+        .bg-secondary { background-color: var(--bg-secondary); }
+        .text-primary { color: var(--text-primary); }
+        .text-secondary { color: var(--text-secondary); }
+        .accent { background-color: var(--accent); }
+        .border-custom { border-color: var(--border-color); }
+
+        /* Custom transition for smooth theme change and hover effects */
+        .section, .card, header, footer {
+            transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+        }
+    </style>
+</head>
+<body class="bg-primary text-primary">
+
+    <!-- Header -->
+    <header class="bg-primary sticky top-0 z-50 shadow-md section">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-primary">FinWise</a>
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#benefits" class="text-secondary hover:text-primary transition">Benefits</a>
+                <a href="#about" class="text-secondary hover:text-primary transition">About Us</a>
+                <a href="#testimonials" class="text-secondary hover:text-primary transition">Testimonials</a>
+                <a href="#contact" class="text-secondary hover:text-primary transition">Contact</a>
+            </div>
+            <div class="flex items-center space-x-4">
+                 <button id="theme-toggle" class="p-2 rounded-full text-secondary hover:bg-gray-200 dark:hover:bg-gray-700">
+                    <i data-feather="moon" class="moon-icon"></i>
+                    <i data-feather="sun" class="sun-icon hidden"></i>
+                </button>
+                <a href="#contact" class="hidden md:block bg-blue-900 text-white py-2 px-6 rounded-lg hover:bg-blue-800 transition">
+                    Request a Consultation
+                </a>
+                <button id="mobile-menu-button" class="md:hidden p-2 text-secondary">
+                    <i data-feather="menu"></i>
+                </button>
+            </div>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-primary pb-4">
+            <a href="#benefits" class="block py-2 px-6 text-secondary hover:bg-secondary">Benefits</a>
+            <a href="#about" class="block py-2 px-6 text-secondary hover:bg-secondary">About Us</a>
+            <a href="#testimonials" class="block py-2 px-6 text-secondary hover:bg-secondary">Testimonials</a>
+            <a href="#contact" class="block py-2 px-6 text-secondary hover:bg-secondary">Contact</a>
+             <div class="px-6 mt-4">
+                <a href="#contact" class="block text-center w-full bg-blue-900 text-white py-2 px-6 rounded-lg hover:bg-blue-800 transition">
+                    Request a Consultation
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="container mx-auto px-6 py-20 md:py-32 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 text-center md:text-left mb-12 md:mb-0" data-aos="fade-right">
+                <h1 class="text-4xl md:text-6xl font-bold text-primary leading-tight mb-4">
+                    Achieve Your Financial Freedom.
+                </h1>
+                <p class="text-lg text-secondary mb-8">
+                    Personalized financial strategies to help you grow your wealth, reduce debt, and secure your future. Let's build your success story together.
+                </p>
+                <a href="#contact" class="bg-blue-900 text-white py-3 px-8 rounded-lg text-lg hover:bg-blue-800 transition-transform transform hover:scale-105">
+                    Get Your Free Consultation
+                </a>
+            </div>
+            <div class="md:w-1/2 flex justify-center" data-aos="fade-left" data-aos-delay="200">
+                <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=1911&auto=format&fit=crop" alt="[Imagem de uma pessoa a analisar gráficos financeiros numa calculadora]" class="rounded-lg shadow-2xl w-full max-w-md h-auto object-cover">
+            </div>
+        </section>
+
+        <!-- Benefits Section -->
+        <section id="benefits" class="bg-secondary section py-20">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl font-bold mb-2" data-aos="fade-up">Why Choose FinWise?</h2>
+                <p class="text-secondary mb-12 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">We provide clarity and confidence in your financial decisions with our expert-led approach.</p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                    <!-- Benefit 1 -->
+                    <div class="card bg-primary p-8 rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="200">
+                        <div class="bg-blue-100 dark:bg-blue-900 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6">
+                            <i data-feather="bar-chart-2" class="text-blue-800 dark:text-blue-300 w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">Strategic Investments</h3>
+                        <p class="text-secondary">Maximize your returns with data-driven investment portfolios tailored to your risk tolerance and goals.</p>
+                    </div>
+                    <!-- Benefit 2 -->
+                    <div class="card bg-primary p-8 rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="300">
+                        <div class="bg-green-100 dark:bg-green-900 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6">
+                            <i data-feather="dollar-sign" class="text-green-800 dark:text-green-300 w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">Debt Reduction Plans</h3>
+                        <p class="text-secondary">Create a clear and effective plan to eliminate debt and free up your income for what truly matters.</p>
+                    </div>
+                    <!-- Benefit 3 -->
+                    <div class="card bg-primary p-8 rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="400">
+                        <div class="bg-purple-100 dark:bg-purple-900 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6">
+                            <i data-feather="shield" class="text-purple-800 dark:text-purple-300 w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">Retirement Planning</h3>
+                        <p class="text-secondary">Secure a comfortable retirement with a long-term financial plan that grows with you.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Us Section -->
+        <section id="about" class="section py-20">
+            <div class="container mx-auto px-6 flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/2" data-aos="fade-right">
+                    <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=1932&auto=format&fit=crop" alt="[Imagem de uma equipa de negócios a colaborar num escritório moderno]" class="rounded-lg shadow-xl w-full h-auto object-cover">
+                </div>
+                <div class="md:w-1/2 text-center md:text-left" data-aos="fade-left">
+                    <h2 class="text-3xl font-bold mb-4">Your Trusted Financial Partners</h2>
+                    <p class="text-secondary mb-4">
+                        FinWise was founded on the principle that everyone deserves access to expert, unbiased financial advice. Our team of certified financial planners is dedicated to understanding your unique situation and empowering you with the knowledge to make smart financial choices.
+                    </p>
+                    <p class="text-secondary">
+                        We believe in building long-term relationships based on trust, transparency, and tangible results. Your success is our success.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section id="testimonials" class="bg-secondary section py-20">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center mb-12" data-aos="fade-up">What Our Clients Say</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Testimonial 1 -->
+                    <div class="card bg-primary p-8 rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="200">
+                        <p class="text-secondary mb-6">"FinWise transformed my approach to money. Their investment advice has been invaluable, and I've seen significant growth in my portfolio."</p>
+                        <div class="flex items-center">
+                            <img src="https://images.unsplash.com/photo-1599566150163-29194dcaad36?q=80&w=1887&auto=format&fit=crop&w=50&h=50" alt="[Foto do rosto de um cliente]" class="w-12 h-12 rounded-full mr-4 object-cover">
+                            <div>
+                                <p class="font-bold text-primary">John D.</p>
+                                <p class="text-sm text-secondary">Marketing Director</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Testimonial 2 -->
+                    <div class="card bg-primary p-8 rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="300">
+                        <p class="text-secondary mb-6">"The debt reduction plan they created for me was a game-changer. I'm on track to be debt-free years earlier than I thought possible. Highly recommend!"</p>
+                        <div class="flex items-center">
+                            <img src="https://images.unsplash.com/photo-1554151228-14d9def656e4?q=80&w=1886&auto=format&fit=crop&w=50&h=50" alt="[Foto do rosto de uma cliente]" class="w-12 h-12 rounded-full mr-4 object-cover">
+                            <div>
+                                <p class="font-bold text-primary">Maria S.</p>
+                                <p class="text-sm text-secondary">Software Engineer</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Testimonial 3 -->
+                    <div class="card bg-primary p-8 rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="400">
+                        <p class="text-secondary mb-6">"As someone nearing retirement, I was anxious about my finances. The team at FinWise gave me a clear, actionable plan and peace of mind."</p>
+                        <div class="flex items-center">
+                            <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=1961&auto=format&fit=crop&w=50&h=50" alt="[Foto do rosto de outra cliente]" class="w-12 h-12 rounded-full mr-4 object-cover">
+                            <div>
+                                <p class="font-bold text-primary">Sarah C.</p>
+                                <p class="text-sm text-secondary">Retired Teacher</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Form Section -->
+        <section id="contact" class="section py-20">
+            <div class="container mx-auto px-6">
+                <div class="bg-secondary rounded-lg shadow-xl p-8 md:p-12 max-w-4xl mx-auto" data-aos="zoom-in-up">
+                    <div class="text-center">
+                        <h2 class="text-3xl font-bold">Ready to Take Control?</h2>
+                        <p class="text-secondary mt-2 mb-8">Fill out the form below for a free, no-obligation consultation with one of our experts.</p>
+                    </div>
+                    <form id="contact-form" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-secondary mb-1">Full Name</label>
+                            <input type="text" id="name" name="name" required class="w-full p-3 rounded-lg border-custom bg-primary focus:ring-2 focus:ring-blue-500 outline-none transition">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-secondary mb-1">Email Address</label>
+                            <input type="email" id="email" name="email" required class="w-full p-3 rounded-lg border-custom bg-primary focus:ring-2 focus:ring-blue-500 outline-none transition">
+                        </div>
+                        <div class="md:col-span-2">
+                            <label for="service" class="block text-sm font-medium text-secondary mb-1">What service are you interested in?</label>
+                            <select id="service" name="service" class="w-full p-3 rounded-lg border-custom bg-primary focus:ring-2 focus:ring-blue-500 outline-none transition">
+                                <option>Investment Strategy</option>
+                                <option>Debt Reduction</option>
+                                <option>Retirement Planning</option>
+                                <option>General Financial Review</option>
+                            </select>
+                        </div>
+                        <div class="md:col-span-2">
+                             <label for="message" class="block text-sm font-medium text-secondary mb-1">Your Message (Optional)</label>
+                             <textarea id="message" name="message" rows="4" class="w-full p-3 rounded-lg border-custom bg-primary focus:ring-2 focus:ring-blue-500 outline-none transition"></textarea>
+                        </div>
+                        <div class="md:col-span-2 text-center">
+                            <button type="submit" class="bg-blue-900 text-white py-3 px-12 rounded-lg text-lg hover:bg-blue-800 transition-transform transform hover:scale-105">
+                                Schedule My Session
+                            </button>
+                        </div>
+                    </form>
+                    <p id="form-message" class="text-center mt-4"></p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-secondary section">
+        <div class="container mx-auto px-6 py-12">
+            <div class="flex flex-col md:flex-row justify-between items-center text-center md:text-left">
+                <div class="mb-8 md:mb-0">
+                    <h3 class="text-xl font-bold text-primary">FinWise</h3>
+                    <p class="text-secondary mt-2">Your Future, Secured.</p>
+                </div>
+                <div class="flex space-x-6 mb-8 md:mb-0">
+                    <a href="#" class="text-secondary hover:text-primary"><i data-feather="twitter"></i></a>
+                    <a href="#" class="text-secondary hover:text-primary"><i data-feather="linkedin"></i></a>
+                    <a href="#" class="text-secondary hover:text-primary"><i data-feather="facebook"></i></a>
+                </div>
+                <div class="text-secondary">
+                    <p>Email: <a href="mailto:contact@finwise.com" class="hover:text-primary">contact@finwise.com</a></p>
+                    <p class="mt-2">&copy; 2024 FinWise. All Rights Reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- AOS (Animate On Scroll) JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+        // AOS Initialization
+        AOS.init({
+            duration: 800, // values from 0 to 3000, with step 50ms
+            once: true, // whether animation should happen only once - while scrolling down
+        });
+
+        // Feather Icons Initialization
+        feather.replace();
+
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Dark/Light Mode Toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        const moonIcon = document.querySelector('.moon-icon');
+        const sunIcon = document.querySelector('.sun-icon');
+        const htmlEl = document.documentElement;
+
+        // Function to set theme
+        const setTheme = (theme) => {
+            if (theme === 'dark') {
+                htmlEl.classList.add('dark');
+                moonIcon.classList.add('hidden');
+                sunIcon.classList.remove('hidden');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                htmlEl.classList.remove('dark');
+                moonIcon.classList.remove('hidden');
+                sunIcon.classList.add('hidden');
+                localStorage.setItem('theme', 'light');
+            }
+            // We need to re-run feather.replace() to correctly style new icons
+            feather.replace();
+        };
+
+        // Check for saved theme in localStorage or user's system preference
+        const savedTheme = localStorage.getItem('theme');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+        if (savedTheme) {
+            setTheme(savedTheme);
+        } else if (prefersDark) {
+            setTheme('dark');
+        } else {
+            setTheme('light');
+        }
+
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = localStorage.getItem('theme') || 'light';
+            setTheme(currentTheme === 'light' ? 'dark' : 'light');
+        });
+
+        // Contact Form Validation
+        const contactForm = document.getElementById('contact-form');
+        const formMessage = document.getElementById('form-message');
+
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            formMessage.textContent = '';
+            formMessage.classList.remove('text-green-600', 'text-red-600');
+
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            
+            if (name === '' || email === '') {
+                formMessage.textContent = 'Please fill in your name and email.';
+                formMessage.classList.add('text-red-600');
+                return;
+            }
+            
+            // Basic email validation regex
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                formMessage.textContent = 'Please enter a valid email address.';
+                formMessage.classList.add('text-red-600');
+                return;
+            }
+
+            // If validation passes
+            formMessage.textContent = 'Thank you! Your request has been sent successfully.';
+            formMessage.classList.add('text-green-600');
+            contactForm.reset();
+        });
+
+    </script>
+</body>
+</html>
