@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Documentation - FinWise</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Source+Code+Pro&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/feather-icons"></script>
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .content-section {
+            scroll-margin-top: 80px; /* Offset for fixed header */
+        }
+        pre {
+            font-family: 'Source Code Pro', monospace;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+        /* Custom scrollbar for better aesthetics */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #ccc;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #b3b3b3;
+        }
+        .sidebar-link.active {
+            background-color: #eef2ff; /* indigo-100 */
+            color: #0a2342; /* dark-blue */
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="flex min-h-screen">
+        <!-- Sidebar -->
+        <aside id="sidebar" class="w-64 bg-white border-r border-gray-200 fixed top-0 left-0 h-full overflow-y-auto z-50 transform -translate-x-full md:translate-x-0 transition-transform duration-300 ease-in-out">
+            <div class="p-6 flex items-center gap-3 border-b">
+                <!-- Icon -->
+                <div class="w-10 h-10 bg-blue-900 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M4 20V4H12.5C14.9853 4 17 6.01472 17 8.5C17 10.9853 14.9853 13 12.5 13H4" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M8 9H12.5" stroke="#2ca58d" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M15 15L20 10M20 10V14M20 10H16" stroke="#2ca58d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <h1 class="text-xl font-bold text-blue-900">FinWise Docs</h1>
+            </div>
+            <nav class="p-4">
+                <ul class="space-y-2">
+                    <li><a href="#introduction" class="sidebar-link flex items-center gap-3 px-4 py-2 text-gray-600 hover:bg-gray-100 rounded-md transition-colors">Introduction</a></li>
+                    <li><a href="#style-guide" class="sidebar-link flex items-center gap-3 px-4 py-2 text-gray-600 hover:bg-gray-100 rounded-md transition-colors">Style Guide</a></li>
+                    <li><a href="#structure" class="sidebar-link flex items-center gap-3 px-4 py-2 text-gray-600 hover:bg-gray-100 rounded-md transition-colors">Structure</a></li>
+                    <li><a href="#components" class="sidebar-link flex items-center gap-3 px-4 py-2 text-gray-600 hover:bg-gray-100 rounded-md transition-colors">Components</a></li>
+                    <li><a href="#javascript" class="sidebar-link flex items-center gap-3 px-4 py-2 text-gray-600 hover:bg-gray-100 rounded-md transition-colors">JavaScript</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Mobile Overlay -->
+        <div id="sidebar-overlay" class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden md:hidden"></div>
+
+        <!-- Main Content -->
+        <div class="flex-1 md:ml-64 transition-all duration-300 ease-in-out">
+            <!-- Sticky Header -->
+            <header class="sticky top-0 z-30 flex h-16 items-center justify-between md:justify-end gap-4 border-b bg-white/80 px-6 backdrop-blur-sm">
+                 <button id="mobile-sidebar-toggle" class="md:hidden text-gray-600 hover:text-gray-900">
+                    <i data-feather="menu" class="h-6 w-6"></i>
+                </button>
+                <a href="https://devkussema.github.io/finwise/" target="_blank" class="bg-blue-900 text-white py-2 px-4 rounded-lg hover:bg-blue-800 transition text-sm font-semibold">View Live Page</a>
+            </header>
+
+            <main class="p-6 md:p-10">
+                <div class="max-w-4xl mx-auto">
+
+                    <!-- Introduction Section -->
+                    <section id="introduction" class="content-section mb-16">
+                        <div class="prose max-w-none">
+                            <h1 class="text-4xl font-bold text-blue-900 border-b pb-4 mb-4">FinWise Project Documentation</h1>
+                            <p class="text-lg">Welcome to the official documentation for the FinWise landing page. This guide serves as a central reference for developers and designers, detailing the project structure, visual style guide, reusable components, and implemented JavaScript functionalities.</p>
+                            <p>The goal is to ensure consistency, facilitate maintenance, and accelerate the development of new features.</p>
+                        </div>
+                    </section>
+
+                    <!-- Style Guide Section -->
+                    <section id="style-guide" class="content-section mb-16">
+                        <div class="prose max-w-none">
+                            <h2 class="text-3xl font-bold text-blue-900 border-b pb-4 mb-6">Style Guide</h2>
+                            
+                            <h3 class="text-2xl font-semibold mb-4">Colors</h3>
+                            <p>The color palette was chosen to convey professionalism, trust, and prosperity. Navy blue is the primary color, while teal serves as an accent.</p>
+                            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center text-white">
+                                <div class="rounded-lg p-4 bg-blue-900">#0a2342<br/>Primary</div>
+                                <div class="rounded-lg p-4 bg-gray-800">#1a202c<br/>Dark BG</div>
+                                <div class="rounded-lg p-4 bg-teal-500">#2ca58d<br/>Accent</div>
+                                <div class="rounded-lg p-4 bg-gray-100 text-gray-800">#f4f7f5<br/>Secondary</div>
+                            </div>
+
+                            <h3 class="text-2xl font-semibold mt-8 mb-4">Typography</h3>
+                            <p>The main font for the project is <strong>Poppins</strong>, used for its clarity and modern look. For code blocks, we use <strong>Source Code Pro</strong>.</p>
+                            <div class="bg-white p-6 rounded-lg border">
+                                <h1 class="text-4xl font-bold">Header H1 (Poppins Bold)</h1>
+                                <h2 class="text-3xl font-bold mt-2">Header H2 (Poppins Bold)</h2>
+                                <h3 class="text-2xl font-semibold mt-2">Header H3 (Poppins SemiBold)</h3>
+                                <p class="mt-4 text-base">This is a normal paragraph text (Poppins Regular). It is used for most of the written content, ensuring excellent readability.</p>
+                            </div>
+                            
+                            <h3 class="text-2xl font-semibold mt-8 mb-4">Icon</h3>
+                            <p>The FinWise icon combines the 'F' and 'W' initials with a growth arrow, symbolizing financial progress.</p>
+                            <div class="flex items-center gap-8 bg-white p-6 rounded-lg border">
+                                <div class="w-24 h-24 bg-blue-900 rounded-xl flex items-center justify-center">
+                                    <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 20V4H12.5C14.9853 4 17 6.01472 17 8.5C17 10.9853 14.9853 13 12.5 13H4" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 9H12.5" stroke="#2ca58d" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M15 15L20 10M20 10V14M20 10H16" stroke="#2ca58d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                </div>
+                                <p>The main icon is used in high-visibility contexts, such as the documentation header and the landing page.</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Structure Section -->
+                    <section id="structure" class="content-section mb-16">
+                        <div class="prose max-w-none">
+                            <h2 class="text-3xl font-bold text-blue-900 border-b pb-4 mb-6">Project Structure</h2>
+                            <p>The project consists of a single HTML file that uses Tailwind CSS for styling and vanilla JavaScript for interactivity. External libraries like Feather Icons and AOS (Animate on Scroll) are imported via CDN.</p>
+                            <pre class="bg-gray-800 text-white p-4 rounded-lg overflow-x-auto"><code>/
+└── index.html
+</code></pre>
+                            <p class="mt-4">Inside <code>index.html</code>, the structure is as follows:</p>
+                            <ul>
+                                <li><strong><code>&lt;head&gt;</code></strong>: Contains metadata, links to Google Fonts, and CDN imports (Tailwind, Feather Icons, AOS).</li>
+                                <li><strong><code>&lt;style&gt;</code></strong>: Defines CSS variables for theming (light/dark mode) and custom styles.</li>
+                                <li><strong><code>&lt;body&gt;</code></strong>: Houses the entire visible structure of the page, divided into <code>&lt;header&gt;</code>, <code>&lt;main&gt;</code>, and <code>&lt;footer&gt;</code>.</li>
+                                <li><strong>Modals</strong>: The contact and success modals are at the end of the <code>&lt;body&gt;</code>, initially hidden.</li>
+                                <li><strong><code>&lt;script&gt;</code></strong>: At the end of the <code>&lt;body&gt;</code>, contains the JavaScript for all interactive features.</li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <!-- Components Section -->
+                    <section id="components" class="content-section mb-16">
+                        <div class="prose max-w-none">
+                            <h2 class="text-3xl font-bold text-blue-900 border-b pb-4 mb-6">Components</h2>
+                            <p>This section details the main reusable UI components.</p>
+
+                            <h3 class="text-2xl font-semibold mt-8 mb-4">Buttons</h3>
+                            <p>There are two main button styles: primary (filled) and secondary (outline).</p>
+                            <div class="bg-white p-6 rounded-lg border space-x-4">
+                                <button class="bg-blue-900 text-white py-2 px-6 rounded-lg hover:bg-blue-800 transition">Primary Button</button>
+                                <button class="border border-blue-900 text-blue-900 py-2 px-6 rounded-lg hover:bg-blue-100 transition">Secondary Button</button>
+                            </div>
+                            <pre class="bg-gray-800 text-white p-4 rounded-lg mt-4"><code>&lt;!-- Primary Button --&gt;
+&lt;button class="bg-blue-900 text-white py-2 px-6 rounded-lg hover:bg-blue-800 transition"&gt;
+  Request a Consultation
+&lt;/button&gt;</code></pre>
+
+                            <h3 class="text-2xl font-semibold mt-8 mb-4">Cards</h3>
+                            <p>Cards are used to display concise information, such as in the benefits and testimonials sections. They have a lift effect on hover.</p>
+                            <div class="bg-white p-6 rounded-lg border">
+                                <div class="w-full max-w-sm mx-auto bg-white p-8 rounded-lg shadow-lg border transition-transform hover:transform hover:-translate-y-2">
+                                    <div class="bg-blue-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6">
+                                        <i data-feather="bar-chart-2" class="text-blue-800 w-8 h-8"></i>
+                                    </div>
+                                    <h3 class="text-xl font-bold mb-3 text-center">Strategic Investments</h3>
+                                    <p class="text-gray-600 text-center">Maximize your returns with data-driven investment portfolios.</p>
+                                </div>
+                            </div>
+
+                            <h3 class="text-2xl font-semibold mt-8 mb-4">Modals</h3>
+                            <p>Modals are used for forms and notifications, focusing the user's attention on a single task.</p>
+                            <pre class="bg-gray-800 text-white p-4 rounded-lg mt-4"><code>&lt;!-- Modal Structure --&gt;
+&lt;div id="contact-modal" class="modal-overlay fixed inset-0 ... hidden"&gt;
+  &lt;div class="modal-container bg-secondary ... "&gt;
+    &lt;!-- Modal Content --&gt;
+    &lt;button data-modal-close="contact-modal"&gt;Close&lt;/button&gt;
+    &lt;form&gt;...&lt;/form&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Button that triggers the modal --&gt;
+&lt;button data-modal-trigger="contact-modal"&gt;Open Modal&lt;/button&gt;</code></pre>
+
+                        </div>
+                    </section>
+
+                    <!-- JavaScript Section -->
+                    <section id="javascript" class="content-section">
+                        <div class="prose max-w-none">
+                            <h2 class="text-3xl font-bold text-blue-900 border-b pb-4 mb-6">JavaScript Functionality</h2>
+                            <p>JavaScript is responsible for all page interactivity. The code is wrapped in a <code>DOMContentLoaded</code> event listener to ensure the DOM is fully loaded before execution.</p>
+
+                            <h3 class="text-2xl font-semibold mt-8 mb-4">Modal Logic</h3>
+                            <p>Modal logic is handled by <code>openModal</code> and <code>closeModal</code> functions. Data attributes (<code>data-modal-trigger</code> and <code>data-modal-close</code>) are used to declaratively associate buttons with specific modals.</p>
+                            <pre class="bg-gray-800 text-white p-4 rounded-lg mt-4"><code>const openModal = (modal) => {
+  if (!modal) return;
+  modal.classList.remove('hidden');
+  setTimeout(() => modal.classList.remove('opacity-0'), 10);
+  // ...
+};
+
+const closeModal = (modal) => {
+  if (!modal) return;
+  modal.classList.add('opacity-0');
+  // ...
+  setTimeout(() => modal.classList.add('hidden'), 300);
+};
+
+// Add event listeners to all triggers and close buttons
+document.querySelectorAll('[data-modal-trigger]').forEach(trigger => {
+    // ...
+});</code></pre>
+
+                            <h3 class="text-2xl font-semibold mt-8 mb-4">Light/Dark Mode</h3>
+                            <p>The theme is controlled by adding or removing the <code>dark</code> class from the <code>&lt;html&gt;</code> element. The user's preference is saved in <code>localStorage</code> to persist between visits.</p>
+                            <pre class="bg-gray-800 text-white p-4 rounded-lg mt-4"><code>const setTheme = (theme) => {
+    if (theme === 'dark') {
+        htmlEl.classList.add('dark');
+        localStorage.setItem('theme', 'dark');
+    } else {
+        htmlEl.classList.remove('dark');
+        localStorage.setItem('theme', 'light');
+    }
+    feather.replace(); // Re-render icons for the new theme
+};
+
+// Check for saved theme or system preference on page load
+const savedTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+setTheme(savedTheme);</code></pre>
+
+                        </div>
+                    </section>
+
+                    <!-- Footer -->
+                    <footer class="mt-24 pt-8 border-t border-gray-200 text-center text-gray-500 text-sm">
+                        <p>&copy; 2024 FinWise. All Rights Reserved.</p>
+                        <p class="mt-1">Documentation built to be clear and concise.</p>
+                    </footer>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script>
+        feather.replace();
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // --- Sidebar Toggle for Mobile ---
+            const sidebar = document.getElementById('sidebar');
+            const overlay = document.getElementById('sidebar-overlay');
+            const toggleButton = document.getElementById('mobile-sidebar-toggle');
+            
+            function openSidebar() {
+                sidebar.classList.remove('-translate-x-full');
+                overlay.classList.remove('hidden');
+            }
+
+            function closeSidebar() {
+                sidebar.classList.add('-translate-x-full');
+                overlay.classList.add('hidden');
+            }
+
+            toggleButton.addEventListener('click', (e) => {
+                e.stopPropagation();
+                if (sidebar.classList.contains('-translate-x-full')) {
+                    openSidebar();
+                } else {
+                    closeSidebar();
+                }
+            });
+
+            overlay.addEventListener('click', closeSidebar);
+
+            // --- Active Sidebar Link Logic ---
+            const sections = document.querySelectorAll('.content-section');
+            const links = document.querySelectorAll('.sidebar-link');
+
+            // Close sidebar when a link is clicked on mobile
+            links.forEach(link => {
+                link.addEventListener('click', () => {
+                    if (window.innerWidth < 768) { // md breakpoint
+                        closeSidebar();
+                    }
+                });
+            });
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        links.forEach(link => {
+                            link.classList.remove('active');
+                            const href = link.getAttribute('href');
+                            if (href && href.substring(1) === entry.target.id) {
+                                link.classList.add('active');
+                            }
+                        });
+                    }
+                });
+            }, { rootMargin: "-50% 0px -50% 0px" });
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+</body>
+</html>
